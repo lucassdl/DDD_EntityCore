@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Data.Entities.ItemDoPedido>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h3>Listagem de Itens do Pedido</h3>
+<hr />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.Label("NomeDoItem")</th>
+            <th>@Html.Label("Pedido")</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var itemDoPedido in Model.ToList())
+        {
+            <tr>
+                <td>@itemDoPedido.NomeDoItem</td>
+                <td>@itemDoPedido.Pedido.NomeDoPedido</td>
+            </tr>
+        }
+    </tbody>
+</table>
